@@ -1,193 +1,1092 @@
 <!DOCTYPE html>
-<html class="dark" lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Trang chủ Website</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .group .group-hover\:block {
-            display: none;
-        }
-        .group:hover .group-hover\:block {
-            display: block;
-        }
-        .group .group-hover\:flex {
-            display: none;
-        }
-        .group:hover .group-hover\:flex {
-            display: flex;
-        }
-    </style>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#7f13ec",
-              "background-light": "#f7f6f8",
-              "background-dark": "#191022",
-            },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+<html lang="vi" class="dark scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REXON | Digital Twin cho Sales Gallery Bất Động Sản</title>
+  <meta name="description" content="Nền tảng Digital Twin cho Sales Gallery bất động sản. Xem trước. Chạm thử. Chốt nhanh hơn. Bản sao số 3D kết nối màn hình cảm ứng, LED Wall, sa bàn IoT và giỏ hàng CRM." />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  
+  <!-- Font Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            bgDark: '#0A0E14',
+            surface: '#121826',
+            surfaceLight: '#182133',
+            accent: '#4D8DFF',
+            accentHover: '#3374e6',
+            borderDark: '#243049',
+            textLight: '#F2F5FA',
+            textMuted: '#9AA6BC',
+            lightStrip: '#F3F5F9'
           },
-        },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow': '0 0 35px -5px rgba(77, 141, 255, 0.3)',
+            'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)'
+          }
+        }
       }
-    </script>
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0A0E14;
+      color: #F2F5FA;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0E14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #243049;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4D8DFF;
+    }
+
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(36, 48, 73, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(36, 48, 73, 0.25) 1px, transparent 1px);
+    }
+    
+    .glow-radial {
+      background: radial-gradient(circle at 50% 30%, rgba(77, 141, 255, 0.18) 0%, transparent 70%);
+    }
+  </style>
 </head>
-<body class="font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-gradient-to-b from-black from-50% to-[#191022] to-100%">
-<header class="sticky top-4 z-50 mx-auto w-full max-w-5xl px-4">
-<nav class="flex items-center justify-between whitespace-nowrap rounded-full border border-white/10 bg-gradient-to-r from-[#2b00ff]/30 to-[#eb00ff]/45 px-6 py-3 text-white backdrop-blur-md">
-<div class="flex items-center gap-4">
-<div class="size-6 text-white">
-<a href="index.html">
-  <img src="logo.png" alt="Logo" class="ml-4" style="max-width:150px; height:auto; object-fit:contain; margin-top:4px;" />
-</a>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-white"></h2>
-</div>
-<!-- Hamburger button for mobile -->
-<button id="hamburger-btn" class="md:hidden flex items-center justify-center p-2 rounded text-white focus:outline-none" aria-label="Mở menu">
-  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-  </svg>
-</button>
-<div class="hidden items-center gap-8 md:flex">
-<a class="text-sm font-medium text-white/100 transition-colors hover:text-white" href="index.html">Home</a>
-<div class="group relative">
-<a class="flex cursor-pointer items-center gap-1 text-sm font-medium text-white/100 transition-colors hover:text-white" href="#">
-  Solutions
-  <span class="material-symbols-outlined text-base transition-transform group-hover:rotate-180">expand_more</span>
-</a>
-<div class="group-hover:block absolute left-0 top-full hidden min-w-[200px] rounded-lg border border-white/10 bg-black/50 p-2 shadow-lg backdrop-blur-md">
-  <div class="group/sub relative">
-    <a class="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="#">
-      Digital Twin
-      <span class="material-symbols-outlined text-base transition-transform group-hover/sub:-rotate-90">chevron_right</span>
-    </a>
-    <div class="group-hover/sub:block absolute left-full top-0 hidden min-w-[200px] rounded-lg border border-white/10 bg-black/50 p-2 shadow-lg backdrop-blur-md">
-      <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Campus</a>
-      <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Building</a>
-      <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Infrastructure</a>
+<body class="selection:bg-accent selection:text-white relative">
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-bgDark/85 border-b border-borderDark/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="REXON Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105" />
+        <span class="sr-only">REXON</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-textLight">
+        <!-- Solutions Dropdown -->
+        <div class="relative group py-2">
+          <button class="flex items-center gap-1.5 hover:text-accent transition-colors focus:outline-none">
+            Giải pháp
+            <svg class="w-4 h-4 text-textMuted transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute left-0 top-full hidden group-hover:block w-72 pt-3">
+            <div class="bg-surface border border-borderDark rounded-xl p-3 shadow-2xl backdrop-blur-xl">
+              <a href="solutions.html" class="block p-3 rounded-lg hover:bg-surfaceLight transition-colors">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold px-1.5 py-0.5 rounded bg-accent/20 text-accent">3D</span>
+                  <span class="font-bold text-sm text-textLight">REXON Experience Gallery</span>
+                </div>
+                <p class="text-xs text-textMuted mt-1">Sales Gallery 3D tương tác cho dự án.</p>
+              </a>
+              <a href="solutions.html#iot" class="block p-3 rounded-lg hover:bg-surfaceLight transition-colors mt-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-400">IoT</span>
+                  <span class="font-bold text-sm text-textLight">IoT Interactive</span>
+                </div>
+                <p class="text-xs text-textMuted mt-1">Kết nối sa bàn, đèn, thiết bị với 3D.</p>
+              </a>
+              <div class="border-t border-borderDark/60 my-2 pt-2 px-3">
+                <div class="flex items-center justify-between text-xs text-textMuted py-1">
+                  <span>Smart Building</span>
+                  <span class="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-textMuted font-bold">ĐỊNH HƯỚNG</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-textMuted py-1">
+                  <span>Smart Campus</span>
+                  <span class="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-textMuted font-bold">ĐỊNH HƯỚNG</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-textMuted py-1">
+                  <span>Smart City</span>
+                  <span class="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-textMuted font-bold">ĐỊNH HƯỚNG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#tinh-nang" class="hover:text-accent transition-colors">Tính năng</a>
+        <a href="#loai-hinh" class="hover:text-accent transition-colors">Loại hình dự án</a>
+        <a href="#doi-tac" class="hover:text-accent transition-colors">Đối tác</a>
+        <a href="about.html" class="hover:text-accent transition-colors">Về REXON</a>
+      </nav>
+
+      <!-- Desktop Right CTA & Lang -->
+      <div class="hidden md:flex items-center gap-4">
+        <div class="text-xs font-semibold px-2.5 py-1 rounded-full border border-borderDark text-textMuted flex items-center gap-1.5">
+          <span class="text-textLight font-bold">VI</span>
+          <span>/</span>
+          <span class="hover:text-textLight cursor-pointer">EN</span>
+        </div>
+        <a href="#form-demo" class="px-5 py-2.5 rounded-full bg-accent hover:bg-accentHover text-white text-sm font-semibold tracking-wide transition-all shadow-glow hover:scale-105 active:scale-95">
+          Đặt lịch demo
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-toggle-btn" class="md:hidden p-2 rounded-lg text-textLight hover:bg-surface border border-borderDark focus:outline-none" aria-label="Mở Menu">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
     </div>
-  </div>
-  <div class="group/sub relative">
-    <a class="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="#">
-      Interactive Product Experience
-      <span class="material-symbols-outlined text-base transition-transform group-hover/sub:-rotate-90">chevron_right</span>
-    </a>
-    <div class="group-hover/sub:block absolute left-full top-0 hidden min-w-[200px] rounded-lg border border-white/10 bg-black/50 p-2 shadow-lg backdrop-blur-md">
-      <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Virtual Showrooms & 3D Web1</a>
-      <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Interactive Product Configurator</a>
-    </div>
-  </div>
-</div>
-</div>
-<a class="text-sm font-medium text-white/100 transition-colors hover:text-white" href="waiting.html">Product</a>
-<a class="text-sm font-medium text-white/100 transition-colors hover:text-white" href="waiting.html">Contact Us</a>
-</div>
-</nav>
-</nav>
-<!-- Mobile menu, hidden by default -->
-<div id="mobile-menu" class="md:hidden absolute left-1/2 top-[60px] -translate-x-1/2 w-11/12 max-w-sm bg-gradient-to-b from-[#191022]/95 to-[#6A0DAD]/80 rounded-xl shadow-2xl z-[999] flex flex-col items-center gap-4 py-8 text-white text-lg font-medium transition-all duration-300 ease-in-out hidden backdrop-blur-lg">
-  <a href="index.html" class="py-2 px-4 w-full text-center hover:bg-primary/30 rounded">Home</a>
-  <div class="w-full">
-    <button id="mobile-solutions-btn" class="py-2 px-4 w-full text-center hover:bg-primary/30 rounded flex items-center justify-between">
-      <span class="block w-full text-center">Solutions</span>
-    </button>
-    <div id="mobile-solutions-menu" class="flex-col gap-2 mt-2 hidden">
-      <div class="relative">
-        <button class="flex w-full items-center justify-between rounded-md px-6 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white">
-          <span class="text-left w-full">Digital Twin</span>
-          <span class="material-symbols-outlined ml-2">chevron_right</span>
-        </button>
-        <div class="ml-8 mt-2 hidden" id="mobile-solutions-group-a">
-          <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Campus</a>
-          <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Building</a>
-          <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Smart Infrastructure</a>
+
+    <!-- Mobile Drawer Menu (Theo file "Bản mobile - menu mở.pdf" & "menu xổ toàn bộ.pdf") -->
+    <div id="mobile-drawer" class="md:hidden hidden bg-bgDark border-b border-borderDark px-5 py-6 space-y-6">
+      <div class="space-y-4">
+        <div>
+          <button id="mobile-solutions-accordion" class="w-full flex items-center justify-between text-base font-bold text-textLight">
+            <span>Giải pháp</span>
+            <svg class="w-4 h-4 text-textMuted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div id="mobile-solutions-panel" class="mt-3 pl-2 space-y-3">
+            <a href="solutions.html" class="block p-2.5 rounded bg-surface border border-borderDark/60">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold px-1.5 py-0.5 bg-accent/20 text-accent rounded">3D</span>
+                <span class="font-bold text-sm text-textLight">REXON Experience Gallery</span>
+              </div>
+              <p class="text-xs text-textMuted mt-0.5">Sales Gallery 3D tương tác cho dự án.</p>
+            </a>
+            <a href="solutions.html#iot" class="block p-2.5 rounded bg-surface border border-borderDark/60">
+              <div class="flex items-center gap-2">
+                <span class="text-[10px] font-bold px-1.5 py-0.5 bg-purple-500/20 text-purple-400 rounded">IoT</span>
+                <span class="font-bold text-sm text-textLight">IoT Interactive</span>
+              </div>
+              <p class="text-xs text-textMuted mt-0.5">Kết nối sa bàn, đèn, thiết bị với 3D.</p>
+            </a>
+            <div class="space-y-1.5 pt-1 text-xs text-textMuted">
+              <div class="flex justify-between items-center">
+                <span>Smart Building</span>
+                <span class="text-[9px] bg-white/10 px-1 rounded">ĐỊNH HƯỚNG</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Smart Campus</span>
+                <span class="text-[9px] bg-white/10 px-1 rounded">ĐỊNH HƯỚNG</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Smart City</span>
+                <span class="text-[9px] bg-white/10 px-1 rounded">ĐỊNH HƯỚNG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#tinh-nang" class="block text-base font-semibold text-textLight hover:text-accent">Tính năng</a>
+        <a href="#loai-hinh" class="block text-base font-semibold text-textLight hover:text-accent">Loại hình dự án</a>
+        <a href="#doi-tac" class="block text-base font-semibold text-textLight hover:text-accent">Đối tác</a>
+        <a href="about.html" class="block text-base font-semibold text-textLight hover:text-accent">Về REXON</a>
+      </div>
+
+      <div class="border-t border-borderDark pt-4 flex items-center justify-between">
+        <span class="text-sm text-textMuted">Ngôn ngữ:</span>
+        <div class="flex gap-2 text-sm font-bold">
+          <span class="text-accent underline">Tiếng Việt</span>
+          <span class="text-textMuted">|</span>
+          <span class="text-textMuted">English</span>
         </div>
       </div>
-      <div class="relative mt-2">
-        <button class="flex w-full items-center justify-between rounded-md px-6 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white">
-          <span class="text-left w-full">Interactive Product Experience</span>
-          <span class="material-symbols-outlined ml-2">chevron_right</span>
+
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <a href="tel:0934697600" class="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-borderDark bg-surface text-sm font-semibold text-textLight">
+          <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Gọi ngay
+        </a>
+        <a href="https://zalo.me/0934697600" target="_blank" class="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-borderDark bg-surface text-sm font-semibold text-textLight">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          Nhắn Zalo
+        </a>
+      </div>
+
+      <a href="#form-demo" class="block w-full text-center py-3 rounded-full bg-accent text-white font-bold text-sm shadow-glow">
+        Đặt lịch demo
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ================= SECTION 1: HERO ================= -->
+  <!-- Sử dụng hình ảnh nền thật từ app: images/hero_bg.png và mockup.png -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-grid-pattern pt-10 pb-16">
+    <div class="absolute inset-0 glow-radial pointer-events-none"></div>
+    
+    <!-- Background Real 3D Environment Image with subtle dark gradient -->
+    <div class="absolute inset-0 z-0">
+      <img src="images/hero_bg.png" alt="Rexon Digital Twin 3D View" class="w-full h-full object-cover opacity-20 filter blur-[1px]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-bgDark/60 via-bgDark/85 to-bgDark"></div>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      
+      <!-- Top Tagline Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-borderDark bg-surface/90 backdrop-blur-md mb-8 animate-fade-in shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-textLight">Digital Twin cho Sales Gallery bất động sản</span>
+      </div>
+
+      <!-- Main Headline (H1 <= 8 từ theo UI Kit) -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-textLight leading-[1.1] mb-6">
+        Xem trước. <br class="sm:hidden" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-indigo-300">Chạm thử.</span> <br />
+        Chốt nhanh hơn.
+      </h1>
+
+      <!-- Subtitle (<= 15 từ theo UI Kit) -->
+      <p class="max-w-2xl mx-auto text-base sm:text-xl text-textMuted font-normal leading-relaxed mb-10">
+        Bản sao số 3D kết nối màn hình, sa bàn và giỏ hàng trong một trải nghiệm.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="#form-demo" class="w-full sm:w-auto px-8 py-4 rounded-full bg-accent hover:bg-accentHover text-white text-base font-bold tracking-wide transition-all shadow-glow hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+          <span>Đặt lịch demo</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <button onclick="openVideoModal()" class="w-full sm:w-auto px-7 py-4 rounded-full bg-surface hover:bg-surfaceLight border border-borderDark text-textLight text-base font-bold transition-all flex items-center justify-center gap-2 group">
+          <svg class="w-5 h-5 text-accent transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Xem video 60 giây</span>
         </button>
-        <div class="ml-8 mt-2 hidden" id="mobile-solutions-group-b">
-          <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Virtual Showrooms & 3D Web1</a>
-          <a class="block rounded-md px-3 py-2 text-sm text-white/80 hover:bg-primary/30 hover:text-white" href="waiting.html">Interactive Product Configurator</a>
+      </div>
+
+      <!-- App Real Mockup Preview Banner (Mockup thực tế từ production) -->
+      <div class="max-w-4xl mx-auto mb-10 rounded-2xl overflow-hidden border border-borderDark shadow-2xl relative group">
+        <img src="images/mockup.png" alt="REXON Experience Gallery Mockup" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-textMuted bg-bgDark/80 backdrop-blur-md px-4 py-2.5 rounded-xl border border-borderDark/60">
+          <span class="flex items-center gap-2 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Hệ thống Sales Gallery tương tác thời gian thực
+          </span>
+          <span class="font-bold text-accent">REXON Experience Platform</span>
+        </div>
+      </div>
+
+      <!-- 4 Connected Touchpoints Badges -->
+      <div class="pt-6 border-t border-borderDark/40">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto">
+          <div class="p-3 rounded-xl bg-surface/50 border border-borderDark/50 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span class="text-xs sm:text-sm font-semibold text-textLight">Màn hình cảm ứng</span>
+          </div>
+          <div class="p-3 rounded-xl bg-surface/50 border border-borderDark/50 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path></svg>
+            <span class="text-xs sm:text-sm font-semibold text-textLight">LED Wall</span>
+          </div>
+          <div class="p-3 rounded-xl bg-surface/50 border border-borderDark/50 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <span class="text-xs sm:text-sm font-semibold text-textLight">Sa bàn IoT</span>
+          </div>
+          <div class="p-3 rounded-xl bg-surface/50 border border-borderDark/50 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+            <span class="text-xs sm:text-sm font-semibold text-textLight">Web & online</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 2: BA LỚP GIÁ TRỊ ================= -->
+  <!-- Sử dụng ảnh từ app thật: canva_img_1 (Space), canva_img_4 (Interaction), canva_img_2 (Data) -->
+  <section class="py-20 bg-bgDark border-t border-borderDark/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-4">
+          Một nền tảng. Ba lớp giá trị.
+        </h2>
+        <p class="text-base text-textMuted">
+          Không thay thế hạ tầng sẵn có – kết nối tất cả lại với nhau.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Không Gian (Ảnh canva_img_1.png) -->
+        <div class="group bg-surface rounded-2xl border border-borderDark overflow-hidden hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 shadow-card">
+          <div class="aspect-[4/3] bg-surfaceLight relative overflow-hidden">
+            <img src="images/canva_img_1.png" alt="Không gian 3D Ban công" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 z-20">
+              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-bgDark/80 backdrop-blur-md border border-borderDark text-accent">
+                01 · SPACE
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-textLight mb-2">Không gian</h3>
+            <p class="text-textMuted text-[15px] leading-relaxed">
+              Khám phá từng căn, tầm nhìn, hướng nắng và trải nghiệm không gian 3D nhập vai.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Tương Tác (Ảnh canva_img_4.jpg) -->
+        <div class="group bg-surface rounded-2xl border border-borderDark overflow-hidden hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 shadow-card">
+          <div class="aspect-[4/3] bg-surfaceLight relative overflow-hidden">
+            <img src="images/canva_img_4.jpg" alt="Tương tác Sa bàn IoT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 z-20">
+              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-bgDark/80 backdrop-blur-md border border-borderDark text-accent">
+                02 · INTERACTION
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-textLight mb-2">Tương tác</h3>
+            <p class="text-textMuted text-[15px] leading-relaxed">
+              Chạm một lần – sa bàn, màn hình cùng phản hồi đồng bộ tức thì.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Dữ Liệu (Ảnh canva_img_2.png) -->
+        <div class="group bg-surface rounded-2xl border border-borderDark overflow-hidden hover:border-accent/60 transition-all duration-300 hover:-translate-y-1 shadow-card">
+          <div class="aspect-[4/3] bg-surfaceLight relative overflow-hidden">
+            <img src="images/canva_img_2.png" alt="Đồng bộ Dữ liệu Real-time" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 z-20">
+              <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-bgDark/80 backdrop-blur-md border border-borderDark text-accent">
+                03 · DATA
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-textLight mb-2">Dữ liệu</h3>
+            <p class="text-textMuted text-[15px] leading-relaxed">
+              Giỏ hàng đồng bộ CRM, thấu hiểu chính xác căn hộ khách hàng đang quan tâm.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 3: MỘT CHẠM - MỌI ĐIỂM CHẠM CÙNG PHẢN HỒI ================= -->
+  <!-- Kịch bản 4 bước tương tác chuẩn tỉ lệ 3:4 -->
+  <section class="py-24 bg-surface border-t border-borderDark/60 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-block px-3 py-1 rounded-full text-xs font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 mb-3 uppercase">
+          Kịch bản bán hàng thực tế
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-textLight tracking-tight mb-4">
+          Một chạm. Mọi điểm chạm cùng phản hồi.
+        </h2>
+        <p class="text-textMuted text-base sm:text-lg">
+          Trải nghiệm đồng bộ không độ trễ giữa Tablet, Sa bàn IoT, LED Wall và CRM.
+        </p>
+      </div>
+
+      <!-- 4 Steps Grid (Aspect 3:4) với ảnh minh họa thực tế từ app -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1: Tablet -->
+        <div class="relative bg-bgDark rounded-2xl border border-borderDark p-5 flex flex-col justify-between hover:border-accent transition-all group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-9 h-9 rounded-xl bg-surface border border-borderDark text-accent font-extrabold text-base flex items-center justify-center">
+              1
+            </span>
+            <span class="text-xs text-textMuted font-semibold">Tablet Sales</span>
+          </div>
+          <div class="aspect-[3/4] bg-surfaceLight rounded-xl border border-borderDark/80 relative overflow-hidden group-hover:shadow-glow transition-all">
+            <img src="images/canva_img_6.png" alt="Tablet Sales" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 text-center">
+              <span class="px-2.5 py-1 bg-accent/90 text-white rounded text-xs font-bold backdrop-blur-sm">
+                Chọn căn 12A-08
+              </span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-base font-bold text-textLight mb-1">Chọn căn trên tablet</h4>
+            <p class="text-xs text-textMuted">Sales thao tác chạm chọn căn 12A-08 trực tiếp trên tablet.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Sa bàn sáng đúng căn -->
+        <div class="relative bg-bgDark rounded-2xl border border-borderDark p-5 flex flex-col justify-between hover:border-accent transition-all group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-9 h-9 rounded-xl bg-surface border border-borderDark text-accent font-extrabold text-base flex items-center justify-center">
+              2
+            </span>
+            <span class="text-xs text-textMuted font-semibold">Sa bàn IoT</span>
+          </div>
+          <div class="aspect-[3/4] bg-surfaceLight rounded-xl border border-borderDark/80 relative overflow-hidden group-hover:shadow-glow transition-all">
+            <img src="images/canva_img_4.jpg" alt="Sa bàn IoT sáng đèn" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 text-center">
+              <span class="px-2.5 py-1 bg-amber-400 text-bgDark rounded text-xs font-bold shadow-lg">
+                Đèn căn 12A-08 bật sáng
+              </span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-base font-bold text-textLight mb-1">Sa bàn sáng đúng căn</h4>
+            <p class="text-xs text-textMuted">Đèn mô hình bật sáng chuẩn xác ngay tại vị trí căn hộ.</p>
+          </div>
+        </div>
+
+        <!-- Step 3: LED Wall mở view căn -->
+        <div class="relative bg-bgDark rounded-2xl border border-borderDark p-5 flex flex-col justify-between hover:border-accent transition-all group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-9 h-9 rounded-xl bg-surface border border-borderDark text-accent font-extrabold text-base flex items-center justify-center">
+              3
+            </span>
+            <span class="text-xs text-textMuted font-semibold">LED Wall</span>
+          </div>
+          <div class="aspect-[3/4] bg-surfaceLight rounded-xl border border-borderDark/80 relative overflow-hidden group-hover:shadow-glow transition-all">
+            <img src="images/canva_img_1.png" alt="LED Wall View Căn" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 text-center">
+              <span class="px-2.5 py-1 bg-sky-500 text-white rounded text-xs font-bold backdrop-blur-sm">
+                View Ban Công Căn 12A-08
+              </span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-base font-bold text-textLight mb-1">LED Wall mở view căn</h4>
+            <p class="text-xs text-textMuted">Cả nhóm khách hàng cùng chiêm ngưỡng tầm nhìn thực tế bao quát.</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Giỏ hàng cập nhật -->
+        <div class="relative bg-bgDark rounded-2xl border border-borderDark p-5 flex flex-col justify-between hover:border-accent transition-all group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-9 h-9 rounded-xl bg-surface border border-borderDark text-accent font-extrabold text-base flex items-center justify-center">
+              4
+            </span>
+            <span class="text-xs text-textMuted font-semibold">Giỏ hàng & CRM</span>
+          </div>
+          <div class="aspect-[3/4] bg-surfaceLight rounded-xl border border-borderDark/80 relative overflow-hidden group-hover:shadow-glow transition-all">
+            <img src="images/canva_img_2.png" alt="Giỏ hàng Real-time" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 text-center">
+              <span class="px-2.5 py-1 bg-amber-500 text-bgDark rounded text-xs font-bold">
+                Cập nhật "Đang giữ chỗ"
+              </span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h4 class="text-base font-bold text-textLight mb-1">Giỏ hàng cập nhật</h4>
+            <p class="text-xs text-textMuted">Trạng thái giỏ hàng tự động đồng bộ tức thì trên toàn hệ thống.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 4: KHÁCH HÀNG THẤY GÌ? ================= -->
+  <!-- Visual Features Grid với hình ảnh thật từ app -->
+  <section id="tinh-nang" class="py-24 bg-bgDark border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+          Khách hàng thấy gì?
+        </h2>
+        <p class="text-base text-textMuted">
+          Trải nghiệm trực quan sống động giải đáp mọi thắc mắc trước khi quyết định mua.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Feature 1: Tầm nhìn từng căn (Ảnh canva_img_1.png) -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-surfaceLight mb-4 relative overflow-hidden border border-borderDark/80">
+              <img src="images/canva_img_1.png" alt="Tầm nhìn 360" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <span class="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white flex items-center gap-1.5 border border-white/20">
+                  <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                  Xoay 360° tầm nhìn
+                </span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-textLight mb-1">Tầm nhìn từng căn</h3>
+            <p class="text-textMuted text-sm">Góc nhìn chuẩn xác 1:1 từ ban công và cửa sổ từng tầng.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Ánh sáng theo giờ -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-gradient-to-r from-amber-500/20 via-sky-500/20 to-indigo-900/40 mb-4 flex items-center justify-center relative overflow-hidden border border-borderDark/80 p-4">
+              <div class="flex gap-2 text-xs font-bold z-10">
+                <span class="px-3 py-1.5 rounded-lg bg-amber-400 text-bgDark font-extrabold shadow">Sáng</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface border border-borderDark text-textLight">Chiều</span>
+                <span class="px-3 py-1.5 rounded-lg bg-surface border border-borderDark text-textLight">Tối</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-textLight mb-1">Ánh sáng theo giờ</h3>
+            <p class="text-textMuted text-sm">Mô phỏng hướng nắng chuẩn xác 4 mùa trong năm.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Đổi nội thất -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-surfaceLight mb-4 flex items-center justify-center relative overflow-hidden border border-borderDark/80 p-3">
+              <div class="w-full flex gap-2">
+                <div class="flex-1 bg-surface border border-borderDark rounded-lg p-2.5 text-center text-xs">
+                  <span class="font-bold text-textLight block">Style Modern</span>
+                  <span class="text-[10px] text-textMuted">Tông ấm tiêu chuẩn</span>
+                </div>
+                <div class="flex-1 bg-surface border border-accent/40 rounded-lg p-2.5 text-center text-xs">
+                  <span class="font-bold text-accent block">Style Luxury</span>
+                  <span class="text-[10px] text-textMuted">Đá marble cao cấp</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-textLight mb-1">Đổi phương án nội thất</h3>
+            <p class="text-textMuted text-sm">So sánh tiêu chuẩn bàn giao thô và hoàn thiện.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4: Quy hoạch & tiện ích (Ảnh smartcity.png) -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-surfaceLight mb-4 relative overflow-hidden border border-borderDark/80">
+              <img src="images/smartcity.png" alt="Quy hoạch tiện ích" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-gradient-to-t from-bgDark/80 via-transparent to-transparent flex items-end p-3">
+                <span class="text-xs font-bold text-textLight">Hồ bơi · Công viên · Tuyến Metro</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-textLight mb-1">Quy hoạch & tiện ích</h3>
+            <p class="text-textMuted text-sm">Trực quan hóa tiện ích nội – ngoại khu và kết nối giao thông.</p>
+          </div>
+        </div>
+
+        <!-- Feature 5: Giỏ hàng thời gian thực (Ảnh canva_img_2.png) -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-surfaceLight mb-4 relative overflow-hidden border border-borderDark/80">
+              <img src="images/canva_img_2.png" alt="Giỏ hàng thời gian thực" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-gradient-to-t from-bgDark/80 via-transparent to-transparent flex items-end p-3">
+                <div class="flex gap-2 text-[10px] font-bold">
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">Còn</span>
+                  <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">Giữ chỗ</span>
+                  <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">Đã bán</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-textLight mb-1">Giỏ hàng thời gian thực</h3>
+            <p class="text-textMuted text-sm">Lưới căn còn, giữ chỗ, đã bán được đồng bộ tự động.</p>
+          </div>
+        </div>
+
+        <!-- Feature 6: Heatmap quan tâm (Ảnh canva_img_3.jpg từ app thật) -->
+        <div class="p-5 rounded-2xl bg-surface border border-borderDark hover:border-accent/60 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-video rounded-xl bg-surfaceLight mb-4 relative overflow-hidden border border-borderDark/80">
+              <img src="images/canva_img_3.jpg" alt="Heatmap quan tâm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <div class="absolute inset-0 bg-gradient-to-t from-bgDark/80 via-transparent to-transparent flex items-end p-3">
+                <span class="text-xs font-bold text-amber-300">Phân tích mật độ tương tác</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+              <h3 class="text-xl font-bold text-textLight">Heatmap quan tâm</h3>
+              <span class="text-[10px] px-2 py-0.5 rounded bg-accent/20 text-accent font-bold">BETA</span>
+            </div>
+            <p class="text-textMuted text-sm">Phân tích căn và tầng có lượng quan tâm cao nhất.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 5: CHO MỌI LOẠI HÌNH DỰ ÁN ================= -->
+  <!-- Khung ảnh tỷ lệ 1:1 theo UI Kit -->
+  <section id="loai-hinh" class="py-20 bg-surface border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+          Cho mọi loại hình dự án
+        </h2>
+        <p class="text-base text-textMuted">
+          Tùy biến linh hoạt theo quy mô và phân khúc sản phẩm của chủ đầu tư.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <div class="bg-bgDark rounded-2xl border border-borderDark p-4 text-center hover:border-accent transition-all group">
+          <div class="aspect-square rounded-xl bg-surfaceLight mb-4 flex items-center justify-center p-4 overflow-hidden border border-borderDark/60 group-hover:scale-95 transition-transform">
+            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <h4 class="font-bold text-base text-textLight">Căn hộ cao cấp</h4>
+        </div>
+
+        <div class="bg-bgDark rounded-2xl border border-borderDark p-4 text-center hover:border-accent transition-all group">
+          <div class="aspect-square rounded-xl bg-surfaceLight mb-4 flex items-center justify-center p-4 overflow-hidden border border-borderDark/60 group-hover:scale-95 transition-transform">
+            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+          </div>
+          <h4 class="font-bold text-base text-textLight">BĐS hàng hiệu</h4>
+        </div>
+
+        <div class="bg-bgDark rounded-2xl border border-borderDark p-4 text-center hover:border-accent transition-all group">
+          <div class="aspect-square rounded-xl bg-surfaceLight mb-4 flex items-center justify-center p-4 overflow-hidden border border-borderDark/60 group-hover:scale-95 transition-transform">
+            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          </div>
+          <h4 class="font-bold text-base text-textLight">Khu đô thị quy hoạch</h4>
+        </div>
+
+        <div class="bg-bgDark rounded-2xl border border-borderDark p-4 text-center hover:border-accent transition-all group">
+          <div class="aspect-square rounded-xl bg-surfaceLight mb-4 flex items-center justify-center p-4 overflow-hidden border border-borderDark/60 group-hover:scale-95 transition-transform">
+            <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h4 class="font-bold text-base text-textLight">Nghỉ dưỡng & khách sạn</h4>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 6: VÌ SAO CHỦ ĐẦU TƯ CHỌN REXON ================= -->
+  <section class="py-24 bg-bgDark border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+          Vì sao chủ đầu tư chọn REXON
+        </h2>
+        <p class="text-base text-textMuted">
+          Giải pháp công nghệ mang lại giá trị hoàn vốn (ROI) và hiệu quả bán hàng vượt trội.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-surface border border-borderDark hover:border-accent/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-textLight mb-2">Tiết kiệm chi phí</h3>
+          <p class="text-textMuted text-sm leading-relaxed">
+            Cập nhật tức thì, không làm lại sa bàn vật lý, không in lại tài liệu quảng cáo.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-surface border border-borderDark hover:border-accent/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-textLight mb-2">Minh bạch từng căn</h3>
+          <p class="text-textMuted text-sm leading-relaxed">
+            Một nguồn dữ liệu trung tâm duy nhất, thống nhất giữa các sàn và đội sales.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-surface border border-borderDark hover:border-accent/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7zM9 9h6M9 13h6M9 17h4"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-textLight mb-2">Tài sản số lâu dài</h3>
+          <p class="text-textMuted text-sm leading-relaxed">
+            Tái sử dụng mô hình qua nhiều giai đoạn mở bán và bàn giao vận hành.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-surface border border-borderDark hover:border-accent/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-textLight mb-2">Bán bằng dữ liệu</h3>
+          <p class="text-textMuted text-sm leading-relaxed">
+            Nắm bắt tức thời khách hàng quan tâm căn nào, tầng nào và phân khu nào.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 7: TRIỂN KHAI TRONG 4 BƯỚC ================= -->
+  <section class="py-20 bg-surface border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+          Triển khai trong 4 bước
+        </h2>
+        <p class="text-base text-textMuted">
+          Quy trình chuẩn hóa từ tiếp nhận dữ liệu đến khi vận hành trơn tru tại Sales Gallery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-bgDark border border-borderDark">
+          <span class="text-3xl font-extrabold text-accent block mb-2 font-mono">01</span>
+          <h4 class="text-lg font-bold text-textLight mb-1">Kick-off</h4>
+          <p class="text-sm text-textMuted">Thống nhất mục tiêu dự án, cấu trúc dữ liệu và lộ trình triển khai.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-bgDark border border-borderDark">
+          <span class="text-3xl font-extrabold text-accent block mb-2 font-mono">02</span>
+          <h4 class="text-lg font-bold text-textLight mb-1">Concept</h4>
+          <p class="text-sm text-textMuted">Thiết lập moodboard, UI hệ thống và kịch bản tư vấn bán hàng.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-bgDark border border-borderDark">
+          <span class="text-3xl font-extrabold text-accent block mb-2 font-mono">03</span>
+          <h4 class="text-lg font-bold text-textLight mb-1">Dựng 3D & tích hợp</h4>
+          <p class="text-sm text-textMuted">Xây dựng mô hình 3D, kết nối sa bàn IoT và đồng bộ giỏ hàng.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-bgDark border border-borderDark">
+          <span class="text-3xl font-extrabold text-accent block mb-2 font-mono">04</span>
+          <h4 class="text-lg font-bold text-textLight mb-1">Beta & bàn giao</h4>
+          <p class="text-sm text-textMuted">Kiểm thử tại Sales Gallery thực tế và đào tạo đội ngũ kinh doanh.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 8: GIẢI THƯỞNG & ĐỐI TÁC ================= -->
+  <section id="doi-tac" class="py-16 bg-bgDark border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-4xl mx-auto bg-surface rounded-2xl border border-borderDark p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-4 text-left">
+          <div class="w-14 h-14 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center shrink-0">
+            <svg class="w-7 h-7 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <div class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Giải thưởng xuất sắc</div>
+            <h4 class="text-lg font-bold text-textLight">Giải Ba – Bảng Doanh nghiệp</h4>
+            <p class="text-xs text-textMuted">HUIT Startup lần VII · 2026</p>
+          </div>
+        </div>
+
+        <div class="h-px w-full md:h-12 md:w-px bg-borderDark"></div>
+
+        <div class="text-center md:text-right">
+          <div class="text-xs uppercase font-bold tracking-wider text-textMuted mb-2">ĐỐI TÁC TRIỂN KHAI</div>
+          <div class="flex items-center gap-6 justify-center md:justify-end text-sm font-bold text-textLight">
+            <span class="px-3 py-1.5 rounded bg-surfaceLight border border-borderDark/80">Phương Nam Model</span>
+            <span class="px-3 py-1.5 rounded bg-surfaceLight border border-borderDark/80">Dezoor</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 9: TẦM NHÌN DÀI HẠN ================= -->
+  <!-- Hình ảnh thật từ app: operations.png và smartcity.png -->
+  <section class="py-20 bg-surface border-t border-borderDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <div class="max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+          Bất động sản là điểm khởi đầu.
+        </h2>
+        <p class="text-base text-textMuted">
+          Cùng lõi Digital Twin, hướng tới số hóa toàn diện tòa nhà, khuôn viên và đại đô thị.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        
+        <div class="rounded-2xl bg-bgDark border border-borderDark/80 overflow-hidden text-left group hover:border-accent transition-all">
+          <div class="aspect-video bg-surfaceLight relative overflow-hidden">
+            <img src="images/presales.png" alt="Smart Building" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 text-[10px] font-extrabold px-2 py-0.5 rounded bg-bgDark/80 border border-borderDark text-textMuted uppercase">ĐỊNH HƯỚNG</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-textLight mb-2">Smart Building</h3>
+            <p class="text-sm text-textMuted">Bản sao số cho vận hành, bảo trì và quản lý năng lượng tòa nhà.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-bgDark border border-borderDark/80 overflow-hidden text-left group hover:border-accent transition-all">
+          <div class="aspect-video bg-surfaceLight relative overflow-hidden">
+            <img src="images/operations.png" alt="Smart Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 text-[10px] font-extrabold px-2 py-0.5 rounded bg-bgDark/80 border border-borderDark text-textMuted uppercase">ĐỊNH HƯỚNG</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-textLight mb-2">Smart Campus</h3>
+            <p class="text-sm text-textMuted">Bản sao số cho khuôn viên giáo dục, bệnh viện và khu công nghệ cao.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-bgDark border border-borderDark/80 overflow-hidden text-left group hover:border-accent transition-all">
+          <div class="aspect-video bg-surfaceLight relative overflow-hidden">
+            <img src="images/smartcity.png" alt="Smart City" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 text-[10px] font-extrabold px-2 py-0.5 rounded bg-bgDark/80 border border-borderDark text-textMuted uppercase">ĐỊNH HƯỚNG</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-textLight mb-2">Smart City</h3>
+            <p class="text-sm text-textMuted">Bản sao số cho khu đô thị quy mô lớn và quy hoạch hạ tầng số.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= SECTION 10: LEAD FORM (ĐẶT LỊCH DEMO) ================= -->
+  <section id="form-demo" class="py-24 bg-bgDark border-t border-borderDark/60 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-surface rounded-3xl border border-borderDark p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-textLight tracking-tight mb-3">
+            Xem REXON chạy trên dự án của bạn.
+          </h2>
+          <p class="text-base text-textMuted">
+            Demo 30 phút – trực tiếp tại showroom hoặc online qua đường truyền tốc độ cao.
+          </p>
+        </div>
+
+        <form id="demo-request-form" onsubmit="handleDemoSubmit(event)" class="space-y-4 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-textLight mb-1.5 uppercase tracking-wider">Họ và tên *</label>
+              <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-bgDark border border-borderDark text-textLight text-sm focus:outline-none focus:border-accent transition-colors" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-textLight mb-1.5 uppercase tracking-wider">Số điện thoại *</label>
+              <input type="tel" required placeholder="09xx xxx xxx" class="w-full px-4 py-3 rounded-xl bg-bgDark border border-borderDark text-textLight text-sm focus:outline-none focus:border-accent transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-textLight mb-1.5 uppercase tracking-wider">Email doanh nghiệp *</label>
+              <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-bgDark border border-borderDark text-textLight text-sm focus:outline-none focus:border-accent transition-colors" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-textLight mb-1.5 uppercase tracking-wider">Công ty / Dự án</label>
+              <input type="text" placeholder="Tên dự án hoặc công ty" class="w-full px-4 py-3 rounded-xl bg-bgDark border border-borderDark text-textLight text-sm focus:outline-none focus:border-accent transition-colors" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-textLight mb-1.5 uppercase tracking-wider">Loại hình dự án</label>
+            <select class="w-full px-4 py-3 rounded-xl bg-bgDark border border-borderDark text-textLight text-sm focus:outline-none focus:border-accent transition-colors">
+              <option value="apartment">Căn hộ cao cấp</option>
+              <option value="luxury">Bất động sản hàng hiệu</option>
+              <option value="urban">Khu đô thị quy hoạch</option>
+              <option value="hospitality">Nghỉ dưỡng & khách sạn</option>
+              <option value="other">Loại hình khác</option>
+            </select>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-accent hover:bg-accentHover text-white font-bold text-base tracking-wide transition-all shadow-glow hover:scale-[1.01] active:scale-95 mt-2">
+            Đặt lịch demo ngay
+          </button>
+
+          <p class="text-center text-xs text-textMuted mt-3">
+            Cam kết bảo mật thông tin · Phản hồi trong vòng 1 ngày làm việc.
+          </p>
+        </form>
+
+        <div id="form-success-msg" class="hidden text-center max-w-md mx-auto py-8">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-textLight mb-2">Đăng ký thành công!</h3>
+          <p class="text-sm text-textMuted">Đội ngũ REXON đã nhận được thông tin và sẽ liên hệ xác nhận lịch demo trong vòng 24 giờ làm việc.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-surface border-t border-borderDark py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1: About Brand -->
+        <div class="md:col-span-2">
+          <img src="logo.png" alt="REXON" class="h-8 w-auto mb-4" />
+          <p class="text-sm text-textLight font-semibold mb-2">
+            Nhìn thấy trước khi xây – Bán hàng bằng dữ liệu.
+          </p>
+          <p class="text-xs text-textMuted max-w-sm leading-relaxed">
+            Nền tảng Digital Twin tích hợp toàn diện cho Sales Gallery bất động sản hàng đầu tại Việt Nam.
+          </p>
+        </div>
+
+        <!-- Col 2: Solutions -->
+        <div>
+          <h4 class="text-xs font-bold text-textLight uppercase tracking-wider mb-4">GIẢI PHÁP</h4>
+          <ul class="space-y-2.5 text-xs text-textMuted font-medium">
+            <li><a href="solutions.html" class="hover:text-accent transition-colors">REXON Experience Gallery</a></li>
+            <li><a href="solutions.html#iot" class="hover:text-accent transition-colors">IoT Interactive Sa Bàn</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Smart Building (Roadmap)</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Smart Campus (Roadmap)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div>
+          <h4 class="text-xs font-bold text-textLight uppercase tracking-wider mb-4">LIÊN HỆ</h4>
+          <ul class="space-y-2.5 text-xs text-textMuted font-medium">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:rexondigitaltwin.tech@gmail.com" class="hover:text-accent">rexondigitaltwin.tech@gmail.com</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <a href="tel:0934697600" class="hover:text-accent">0934 697 600</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>TP. Hồ Chí Minh, Việt Nam</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-borderDark/60 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-textMuted gap-4">
+        <p>© 2026 Công ty TNHH Công nghệ Rexon. All rights reserved.</p>
+        <p class="text-[11px]">Bản quyền thiết kế theo quy chuẩn REXON UI Kit 2026.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= MOBILE STICKY FLOATING CTA BAR ================= -->
+  <!-- Theo đúng file "Bản mobile - trang chủ đầy đủ.pdf" -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-t border-borderDark px-4 py-3 flex items-center gap-3">
+    <a href="https://zalo.me/0934697600" target="_blank" class="flex-1 py-2.5 rounded-full border border-borderDark bg-bgDark text-center text-xs font-bold text-textLight flex items-center justify-center gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+      Zalo
+    </a>
+    <a href="#form-demo" class="flex-[2] py-2.5 rounded-full bg-accent text-center text-xs font-bold text-white shadow-glow">
+      Đặt lịch demo
+    </a>
+  </div>
+
+
+  <!-- ================= MODAL VIDEO 60 GIÂY ================= -->
+  <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl bg-surface border border-borderDark rounded-2xl overflow-hidden shadow-2xl">
+      <div class="flex items-center justify-between p-4 border-b border-borderDark">
+        <h3 class="text-sm font-bold text-textLight">REXON Digital Twin · Giới thiệu 60 giây</h3>
+        <button onclick="closeVideoModal()" class="p-1 rounded text-textMuted hover:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center">
+        <div class="text-center p-8">
+          <div class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
+            <svg class="w-8 h-8 text-accent ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="text-sm font-semibold text-textLight">Video đang được cập nhật với cảnh quay 3D thực tế</p>
+          <p class="text-xs text-textMuted mt-1">Liên hệ đội ngũ REXON để nhận video demo trực tiếp.</p>
         </div>
       </div>
     </div>
   </div>
-  <a href="waiting.html" class="py-2 px-4 w-full text-center hover:bg-primary/30 rounded">Product</a>
-  <a href="waiting.html" class="py-2 px-4 w-full text-center hover:bg-primary/30 rounded">Contact Us</a>
-</div>
-</header>
-<main class="flex flex-grow flex-col">
-<div class="relative -mt-24 flex flex-grow flex-col">
-<div class="@container flex flex-grow">
-<div class="@[480px]:p-4 flex flex-grow">
-<div class="flex flex-grow flex-col items-center justify-center gap-6 rounded-lg bg-cover bg-center bg-no-repeat p-4 @[480px]:gap-8" data-alt="Abstract vibrant purple and dark blue gradient background" style="background-image: linear-gradient(to bottom, #000 0%, #000 25%, rgba(166,0,255,0.27) 100%);">
-<div style="margin-top:80px;" class="text-center px-2 sm:px-0">
-  <h2 class="font-normal leading-normal text-white/100 text-center text-xl sm:text-2xl md:text-3xl" style="font-size:clamp(1.1rem,4vw,2rem);">
-    Nền tảng Digital Twin<br />
-    cho doanh nghiệp Việt Nam
-  </h2>
-  <button onclick="window.location.href='waiting.html'" class="flex min-w-[84px] max-w-full sm:max-w-[480px] mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 sm:h-12 px-4 sm:px-5 text-xs sm:text-base font-bold leading-normal tracking-[0.015em] text-white transition-colors hover:bg-primary/80" style="margin-top:20px; background: linear-gradient(to right, rgba(43,0,255,0.35) 0%, rgba(235,0,255,0.45) 100%);">
-    <span class="truncate">Khám phá hệ sinh thái số</span>
-  </button>
-  <h2 class="font-normal leading-normal text-white/70 text-center text-xs sm:text-base" style="margin-top:12px; font-size:clamp(0.85rem,2.5vw,1rem);">
-    Nền tảng Digital Twin của REXON giúp doanh nghiệp mô phỏng – tối ưu – vận hành tài sản trong thời<br />
-    gian thực, tăng hiệu suất, giảm rủi ro và ra quyết định nhanh hơn.
-  </h2>
-</div>
-</div>
-</div>
-</div>
-</main>
-<div class="mx-auto w-full max-w-5xl">
-<footer class="flex flex-col items-center gap-8 border-t border-gray-200 px-5 py-10 text-center dark:border-white/10 @container">
-<div class="flex flex-col items-center gap-4 text-center text-sm text-gray-600 dark:text-gray-400">
-<p>Contact: 0934 697 600 | Email: rexondigitaltwin.tech@gmail.com</p>
-<p>© 2025 REXON. All rights reserved.</p> 
-</div>
-</footer>
-</div>
-</div>
-<script>
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburgerBtn.addEventListener('click', function() {
-    mobileMenu.classList.toggle('hidden');
-  });
 
-  // Mobile Solutions submenu toggle
-  const mobileSolutionsBtn = document.getElementById('mobile-solutions-btn');
-  const mobileSolutionsMenu = document.getElementById('mobile-solutions-menu');
-  mobileSolutionsBtn.addEventListener('click', function() {
-    mobileSolutionsMenu.classList.toggle('hidden');
-  });
 
-  // Group A toggle
-  const groupAButton = mobileSolutionsMenu.querySelector('button');
-  const groupAMenu = document.getElementById('mobile-solutions-group-a');
-  groupAButton.addEventListener('click', function(e) {
-    e.stopPropagation();
-    groupAMenu.classList.toggle('hidden');
-  });
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Mobile Drawer Toggle
+    const mobileBtn = document.getElementById('mobile-toggle-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
 
-  // Group B toggle
-  const groupBButton = mobileSolutionsMenu.querySelectorAll('button')[1];
-  const groupBMenu = document.getElementById('mobile-solutions-group-b');
-  groupBButton.addEventListener('click', function(e) {
-    e.stopPropagation();
-    groupBMenu.classList.toggle('hidden');
-  });
-</script>
-</body></html>
+    mobileBtn.addEventListener('click', () => {
+      const isHidden = mobileDrawer.classList.toggle('hidden');
+      if (isHidden) {
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+
+    // Mobile Solutions Accordion
+    const mobileSolutionsAccordion = document.getElementById('mobile-solutions-accordion');
+    const mobileSolutionsPanel = document.getElementById('mobile-solutions-panel');
+    mobileSolutionsAccordion.addEventListener('click', () => {
+      mobileSolutionsPanel.classList.toggle('hidden');
+    });
+
+    // Video Modal
+    function openVideoModal() {
+      document.getElementById('video-modal').classList.remove('hidden');
+      document.getElementById('video-modal').classList.add('flex');
+    }
+    function closeVideoModal() {
+      document.getElementById('video-modal').classList.add('hidden');
+      document.getElementById('video-modal').classList.remove('flex');
+    }
+
+    // Lead Form Handler
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      document.getElementById('demo-request-form').classList.add('hidden');
+      document.getElementById('form-success-msg').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
